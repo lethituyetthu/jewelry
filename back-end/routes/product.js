@@ -20,6 +20,7 @@ router.get("/", async function (req, res, next) {
       price: e.price,
       stock: e.stock,
       weight: e.weight,
+      sales: e.sales,
       material: e.material.name, // khóa phụ
       category: e.category.name, // khóa phụ
       created_at: e.created_at,
@@ -32,6 +33,18 @@ router.get("/", async function (req, res, next) {
       error: error.message,
     });
   }
+});
+
+// show chi tiết
+
+router.get("/:id", async function (req, res, next) {
+  var id = req.params.id;
+
+  var pro = await productModel.findById(id);
+
+  if (pro) {
+    res.status(200).json(pro);
+  } else res.status(500).json({ message: "lỗi khi lấy chi tiết sp" });
 });
 
 // lấy sp theo danh mục
@@ -199,7 +212,7 @@ router.get("/new-product", async function (req, res, next) {
 
 // 5 sp hot
 router.get("/hot-product", async function (req, res, next) {
-  const pro = await productModel.find().sort({sales:-1}).limit(5)
+  const pro = await productModel.find().sort({ sales: -1 }).limit(5);
   if (pro.length > 0) {
     const data = pro.map((e) => ({
       id: e._id,
@@ -210,16 +223,16 @@ router.get("/hot-product", async function (req, res, next) {
   } else {
     res.status(400).json({ message: "không có sản phẩm mới nhất" });
   }
-
 });
 
-
-router.get('/:min/:max',async function (req, res, next) {
-
+// tìm sp trong khoảng giá từ min tới max
+router.get("/:min/:max", async function (req, res, next) {
   var min = req.params.min;
   var max = req.params.max;
 
-  const pro = await productModel.find({$or: [ { price: { $gt: min,$lt :max }  } ],})
+  const pro = await productModel.find({
+    $or: [{ price: { $gt: min, $lt: max } }],
+  });
   if (pro.length > 0) {
     const data = pro.map((e) => ({
       id: e._id,
@@ -230,8 +243,160 @@ router.get('/:min/:max',async function (req, res, next) {
   } else {
     res.status(400).json({ message: "không có sản phẩm " });
   }
-  
-})
+});
 
+// thêm sp
+
+router.post("/", async function (req, res, next) {
+  const { name, description, price, stock, material, weight, category } =
+    req.body;
+
+  try {
+    const existPro = await productModel.findOne({ name: name });
+
+    if (existPro) {
+      return res.status(400).json({
+        message: "sản phầm đã tồn tại",
+      });
+    }
+
+    const newPro = new productModel({
+      name,
+      description,
+      price,
+      stock,
+      material,
+      weight,
+      category,
+      created_at: new Date(),
+      updated_at: new Date(),
+      sales: 0,
+    });
+
+    const pro = await newPro.save();
+    res.status(200).json({
+      message: "thêm danh mục thành công",
+      data: pro,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "lỗi khi thêm danh mục",
+      error: error.message,
+    });
+  }
+});
+
+// sửa  sp
+
+router.put("/:id", async function (req, res, next) {
+  const id = req.params.id;
+  const { name, description, price, stock, material, weight, category } =
+    req.body;
+
+  try {
+    const existPro = await productModel.findOne({ name: name });
+
+    if (existPro) {
+      return res.status(400).json({
+        message: "sản phầm đã tồn tại",
+      });
+    }
+
+    const updatePro = {
+      name,
+      description,
+      price,
+      stock,
+      material,
+      weight,
+      category,
+      updated_at: new Date(),
+    };
+
+    const pro = await productModel.findByIdAndUpdate(id, updatePro, {
+      new: true,
+    });
+    if (pro) {
+      res.status(200).json({
+        message: "Cập nhật sản phẩm   thành công",
+        data: pro,
+      });
+    } else {
+      res.status(404).json({
+        message: "sản phẩm  không tìm thấy",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      message: "lỗi khi thêm danh mục",
+      error: error.message,
+    });
+  }
+});
+
+// thêm số lượng sp
+router.patch("/:id", async function (req, res, next) {
+  const id = req.params.id;
+  const { stock } = req.body;
+
+  if (stock === undefined || stock < 0) {
+    return res.status(400).json({
+      message: " số lượng nhập vào không hợp lệ",
+    });
+  }
+
+  try {
+    const pros = await productModel.findById(id);
+
+    if (!pros) {
+      return res.status(404).json({
+        message: "Sản phẩm không tìm thấy",
+      });
+    }
+
+    const newStock = pros.stock + stock;
+
+    const pro = await productModel.findByIdAndUpdate(
+      id,
+      { stock: newStock, updated_at: new Date() },
+      {
+        new: true,
+      }
+    );
+    if (pro) {
+      res.status(200).json({
+        message: "Cập nhật số lượng sản phẩm thành công",
+        data: pro,
+      });
+    } else {
+      res.status(404).json({
+        message: "sản phẩm  không tìm thấy",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      message: "lỗi khi sửa sp",
+      error: error.message,
+    });
+  }
+});
+
+// xoá sp
+router.delete("/:id", async function (req, res, next) {
+  const id = req.params.id;
+
+  const product = await productModel.findByIdAndDelete(id);
+
+  if (product) {
+    res.status(200).json({
+      message: "xoá danh mục thành công",
+      data: product,
+    });
+  } else {
+    res.status(404).json({
+      message: "Danh mục không tìm thấy",
+    });
+  }
+});
 
 module.exports = router;

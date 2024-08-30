@@ -34,7 +34,7 @@ router.get("/parentCate/:parentId", async function (req, res, next) {
 router.get("/search/:name", async function (req, res, next){
   var name = req.params.name
 
-  const cate = await categoryModel.find({name: new RegExp(name, 'i')})
+  const cate = await modelCate.find({name: new RegExp(name, 'i')})
 
   if( cate.length > 0){
 

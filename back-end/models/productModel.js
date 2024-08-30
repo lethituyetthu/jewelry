@@ -10,7 +10,7 @@ description: { type: String},
 price: { type: Number},
 stock: { type: Number},
 weight: { type: Number},
-sales: { type: Number},
+sales: { type: Number, default: 0},
 material: { type: ObjectId, ref:'material' }, // khóa chính
 category: { type: ObjectId, ref:'category' }, // khóa chính
 created_at: {type: Date, default: Date.now},
