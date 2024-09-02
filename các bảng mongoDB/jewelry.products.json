@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "66ccb133053f59020127fd01"
+  },
+  "name": "Dây chuyền vàng 18K",
+  "description": "Dây chuyền vàng 18K tinh xảo, phù hợp cho các sự kiện trang trọng.",
+  "price": 5000000,
+  "stock": 46,
+  "material": {
+    "$oid": "66ccc426053f59020127fd04"
+  },
+  "weight": 1,
+  "created_at": "2024-08-26 11:00:00",
+  "updated_at": {
+    "$date": "2024-08-28T04:39:53.658Z"
+  },
+  "category": {
+    "$oid": "66cdaadcb0b2b269cc776fc6"
+  },
+  "sales": 60
+},
+{
+  "_id": {
+    "$oid": "66cda94d053f59020127fd17"
+  },
+  "name": "Nhẫn kim cương trắng",
+  "description": "Nhẫn kim cương trắng sang trọng, biểu tượng của sự vĩnh cửu và tinh khiết",
+  "price": 20000000,
+  "stock": 10,
+  "material": {
+    "$oid": "66ccc482053f59020127fd07"
+  },
+  "weight": 10,
+  "created_at": "2024-08-26 11:00:00",
+  "updated_at": "2024-08-26 11:00:00",
+  "category": {
+    "$oid": "66cdaad3b0b2b269cc776fc3"
+  },
+  "sales": 20
+},
+{
+  "_id": {
+    "$oid": "66cda9cf053f59020127fd19"
+  },
+  "name": "Vòng tay bạc khắc tên",
+  "description": "Vòng tay bạc với dịch vụ khắc tên cá nhân, món quà đặc biệt cho người thân.",
+  "price": 1500000,
+  "stock": 20,
+  "material": {
+    "$oid": "66ccc44d053f59020127fd05"
+  },
+  "weight": 7,
+  "created_at": "2024-08-26 11:00:00",
+  "updated_at": "2024-08-26 11:00:00",
+  "category": {
+    "$oid": "66cdaae6b0b2b269cc776fc9"
+  },
+  "sales": 10
+},
+{
+  "_id": {
+    "$oid": "66cddb08b0f45e3e4bf48701"
+  },
+  "name": "Dây chuyền vàng 18K",
+  "description": "Dây chuyền vàng 18K tinh xảo, phù hợp cho các sự kiện trang trọng.",
+  "price": 5000000,
+  "stock": 1,
+  "material": {
+    "$oid": "66ccc426053f59020127fd04"
+  },
+  "weight": 1,
+  "created_at": "2024-08-26 11:00:00",
+  "updated_at": "2024-08-26 11:00:00",
+  "category": {
+    "$oid": "66cdaadcb0b2b269cc776fc6"
+  },
+  "sales": 0
+}]

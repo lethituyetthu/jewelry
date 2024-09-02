@@ -246,7 +246,6 @@ router.get("/:min/:max", async function (req, res, next) {
 });
 
 // thêm sp
-
 router.post("/", async function (req, res, next) {
   const { name, description, price, stock, material, weight, category } =
     req.body;
@@ -287,7 +286,6 @@ router.post("/", async function (req, res, next) {
 });
 
 // sửa  sp
-
 router.put("/:id", async function (req, res, next) {
   const id = req.params.id;
   const { name, description, price, stock, material, weight, category } =

@@ -109,7 +109,7 @@ router.delete("/:id", async function (req, res, next) {
     res.status(500).json({ message: "lỗi khi xoá sp", error });
   }
 });
-
+// đăng nhập
 router.post("/login", async function (req, res, next) {
   const { email, password } = req.body;
 
@@ -148,7 +148,6 @@ router.post("/login", async function (req, res, next) {
 });
 
 // tìn nv theo tên
-
 router.get("/search/:name", async function (req, res, next) {
   const name = req.params.name;
 
@@ -189,7 +188,6 @@ router.get("/role/:id", async function (req, res, next) {
 });
 
 // chi tiet
-
 router.get("/:id", async function (req, res, next) {
   const id = req.params.id;
 

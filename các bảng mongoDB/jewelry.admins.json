@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "66cefe30b0f45e3e4bf4870a"
+  },
+  "name": "Nguyễn Quản Trị",
+  "email": "admin@example.com",
+  "password": "pasword12345",
+  "role": {
+    "$oid": "66d0169e133846c6b5aac030"
+  },
+  "created_at": "2024-08-01 09:00:00",
+  "updated_at": {
+    "$date": "2024-08-29T10:40:19.052Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66cefe7eb0f45e3e4bf4870b"
+  },
+  "name": "Trần Biên Tập",
+  "email": "editor@example.com",
+  "password": "editorpass",
+  "role": {
+    "$oid": "66d016bf133846c6b5aac031"
+  },
+  "created_at": "2024-08-05 10:30:00",
+  "updated_at": "2024-08-16 15:30:00"
+},
+{
+  "_id": {
+    "$oid": "66d01049cad2767e707eef3b"
+  },
+  "name": "Nguyễn Quản Trị 25",
+  "email": "admin25@example.com",
+  "password": "$2a$10$chsm4PYpzTEekO.neisSru4Q4X46YjsKtDhkeAR2hG8ctZWcz/M1e",
+  "role": {
+    "$oid": "66d016bf133846c6b5aac031"
+  },
+  "created_at": {
+    "$date": "2024-08-29T06:08:09.659Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-29T06:08:09.659Z"
+  },
+  "__v": 0
+}]

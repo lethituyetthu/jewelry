@@ -7,7 +7,6 @@ const categoryModel = require("../models/categoryModel");
 // danh sách danh mục
 router.get("/", async function (req, res, next) {
   var data = await modelCate.find();
- 
 
   res.status(200).json(data);
 });
@@ -21,29 +20,39 @@ router.get("/:id", async function (req, res, next) {
 });
 
 // truy xuất danh mục con
-router.get("/parentCate/:parentId", async function (req, res, next) {
+router.get("/parent/:parentId", async function (req, res, next) {
   var id = req.params.parentId;
 
   var cate = await modelCate.find({ parent_id: id });
 
-  
   res.status(200).json(cate);
+});
+// truy xuất danh mục con
+router.get("/parentCate", async function (req, res, next) {
+  try {
+    const cate = await modelCate.find({ parent_id: null });
+
+    if (cate.length === 0) {
+      return res.status(404).json({ message: "Không tìm thấy danh mục cha nào" });
+    }
+
+    res.status(200).json(cate);
+  } catch (error) {
+    console.error("Lỗi khi truy xuất danh mục cha:", error);
+    res.status(500).json({ message: "Đã xảy ra lỗi khi truy xuất dữ liệu", error: error.message });
+  }
 });
 
 // tìm danh mục theo tên
-router.get("/search/:name", async function (req, res, next){
-  var name = req.params.name
+router.get("/search/:name", async function (req, res, next) {
+  var name = req.params.name;
 
-  const cate = await modelCate.find({name: new RegExp(name, 'i')})
+  const cate = await modelCate.find({ name: new RegExp(name, "i") });
 
-  if( cate.length > 0){
-
-    res.status(200).json(cate)
-
-  }else(
-    res.status(404).json({message: "không tìm thấy danh mục nào"})
-  )
-})
+  if (cate.length > 0) {
+    res.status(200).json(cate);
+  } else res.status(404).json({ message: "không tìm thấy danh mục nào" });
+});
 // thêm danh mục
 router.post("/", async function (req, res, next) {
   const { parent_id, name } = req.body;
@@ -84,7 +93,6 @@ router.put("/:id", async function (req, res, next) {
   const { parent_id, name } = req.body;
 
   try {
-
     const existCate = await modelCate.findOne({ name: name });
 
     if (existCate) {

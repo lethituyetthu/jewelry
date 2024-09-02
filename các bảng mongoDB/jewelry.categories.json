@@ -1,0 +1,186 @@
+[{
+  "_id": {
+    "$oid": "66cc54b311d948d1decc075e"
+  },
+  "parent_id": null,
+  "name": "trang sức nam",
+  "created_at": {
+    "$date": "2024-08-26T03:30:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-26T03:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66cc556c11d948d1decc0761"
+  },
+  "parent_id": null,
+  "name": "trang sức nữ",
+  "created_at": {
+    "$date": "2024-08-26T03:30:00.000Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-26T03:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66cdaad3b0b2b269cc776fc3"
+  },
+  "parent_id": {
+    "$oid": "66cc556c11d948d1decc0761"
+  },
+  "name": "Nhẫn nữ",
+  "created_at": {
+    "$date": "2024-08-27T10:30:43.209Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:30:43.209Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdaadcb0b2b269cc776fc6"
+  },
+  "parent_id": {
+    "$oid": "66cc556c11d948d1decc0761"
+  },
+  "name": "Dây chuyền nữ",
+  "created_at": {
+    "$date": "2024-08-27T10:30:52.194Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:30:52.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdaae6b0b2b269cc776fc9"
+  },
+  "parent_id": {
+    "$oid": "66cc556c11d948d1decc0761"
+  },
+  "name": "Vòng tay nữ",
+  "created_at": {
+    "$date": "2024-08-27T10:31:02.606Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:31:02.606Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdaaefb0b2b269cc776fcc"
+  },
+  "parent_id": {
+    "$oid": "66cc556c11d948d1decc0761"
+  },
+  "name": "Khuyên tai nữ ",
+  "created_at": {
+    "$date": "2024-08-27T10:31:11.430Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:31:11.430Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdaaf9b0b2b269cc776fcf"
+  },
+  "parent_id": {
+    "$oid": "66cc556c11d948d1decc0761"
+  },
+  "name": "Lắc chân nữ",
+  "created_at": {
+    "$date": "2024-08-27T10:31:21.008Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:31:21.008Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdac24b0b2b269cc776fd9"
+  },
+  "parent_id": {
+    "$oid": "66cc54b311d948d1decc075e"
+  },
+  "name": "Nhẫn nam",
+  "created_at": {
+    "$date": "2024-08-27T10:36:20.382Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:36:20.382Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdac31b0b2b269cc776fdc"
+  },
+  "parent_id": {
+    "$oid": "66cc54b311d948d1decc075e"
+  },
+  "name": "Dây chuyền nam",
+  "created_at": {
+    "$date": "2024-08-27T10:36:33.054Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:36:33.054Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdac3bb0b2b269cc776fdf"
+  },
+  "parent_id": {
+    "$oid": "66cc54b311d948d1decc075e"
+  },
+  "name": "Vòng tay nam",
+  "created_at": {
+    "$date": "2024-08-27T10:36:43.674Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:36:43.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdac49b0b2b269cc776fe2"
+  },
+  "parent_id": {
+    "$oid": "66cc54b311d948d1decc075e"
+  },
+  "name": "Khuyên tai nam",
+  "created_at": {
+    "$date": "2024-08-27T10:36:57.295Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:36:57.295Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cdac54b0b2b269cc776fe5"
+  },
+  "parent_id": {
+    "$oid": "66cc54b311d948d1decc075e"
+  },
+  "name": "Lắc chân nam",
+  "created_at": {
+    "$date": "2024-08-27T10:37:08.524Z"
+  },
+  "updated_at": {
+    "$date": "2024-08-27T10:37:08.524Z"
+  },
+  "__v": 0
+}]

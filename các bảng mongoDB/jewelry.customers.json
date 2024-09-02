@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "66cefd45b0f45e3e4bf48704"
+  },
+  "name": "Nguyễn Văn A",
+  "email": "nguyenvana@example.com",
+  "phone": "0912345678",
+  "address": "123 Đường ABC, Quận 1, TP. Hồ Chí Minh",
+  "created_at": "2024-08-01 09:00:00",
+  "updated_at": "2024-08-15 14:00:00"
+},
+{
+  "_id": {
+    "$oid": "66cefd5ab0f45e3e4bf48705"
+  },
+  "name": "Trần Thị B",
+  "email": "tranthib@example.com",
+  "phone": "0987654321",
+  "address": "456 Đường DEF, Quận 2, TP. Hồ Chí Minh",
+  "created_at": "2024-08-05 10:30:00",
+  "updated_at": "2024-08-16 15:30:00"
+},
+{
+  "_id": {
+    "$oid": "66cefd65b0f45e3e4bf48706"
+  },
+  "name": "Lê Văn C",
+  "email": "levanc@example.com",
+  "phone": "0938765432",
+  "address": "789 Đường GHI, Quận 3, TP. Hồ Chí Minh",
+  "created_at": "2024-08-10 11:00:00",
+  "updated_at": "2024-08-17 16:00:00"
+},
+{
+  "_id": {
+    "$oid": "66cefd73b0f45e3e4bf48707"
+  },
+  "name": "Phạm Thị D",
+  "email": "phamthid@example.com",
+  "phone": "0947654321",
+  "address": "101 Đường JKL, Quận 4, TP. Hồ Chí Minh",
+  "created_at": "2024-08-12 12:00:00",
+  "updated_at": "2024-08-18 17:00:00"
+},
+{
+  "_id": {
+    "$oid": "66cefd87b0f45e3e4bf48708"
+  },
+  "name": "Hoàng Văn E",
+  "email": "hoangvane@example.com",
+  "phone": "0923456789",
+  "address": "202 Đường MNO, Quận 5, TP. Hồ Chí Minh",
+  "created_at": "2024-08-14 13:00:00",
+  "updated_at": "2024-08-19 18:00:00"
+}]
