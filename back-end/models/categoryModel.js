@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const categoryModel = new Schema({
-id:{type: ObjectId},
+_id:{type: ObjectId},
 parent_id: { type: Schema.Types.ObjectId, default: null }, // khóa chính
 name: { type: String},
 created_at: {type: Date, default: Date.now},

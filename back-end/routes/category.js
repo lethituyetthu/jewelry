@@ -27,21 +27,6 @@ router.get("/parent/:parentId", async function (req, res, next) {
 
   res.status(200).json(cate);
 });
-// truy xuất danh mục con
-router.get("/parentCate", async function (req, res, next) {
-  try {
-    const cate = await modelCate.find({ parent_id: null });
-
-    if (cate.length === 0) {
-      return res.status(404).json({ message: "Không tìm thấy danh mục cha nào" });
-    }
-
-    res.status(200).json(cate);
-  } catch (error) {
-    console.error("Lỗi khi truy xuất danh mục cha:", error);
-    res.status(500).json({ message: "Đã xảy ra lỗi khi truy xuất dữ liệu", error: error.message });
-  }
-});
 
 // tìm danh mục theo tên
 router.get("/search/:name", async function (req, res, next) {
